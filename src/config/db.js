@@ -1,8 +1,16 @@
 // src/config/db.js
-const mongoose = require('mongoose');
-const { MONGODB_URI } = require('../../.env');
+// src/config/db.js
+process.on('unhandledRejection', (reason, promise) => {
+  console.error('Unhandled Rejection at:', promise, 'reason:', reason);
+});
 
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+// ... rest of your code
+
+const mongoose = require('mongoose');
+const { MONGODB_URI } = process.env; // Ensure MONGODB_URI is correctly fetched from env variables
+console.log('MongoDB URI:', process.env.MONGODB_URI);
+mongoose.connect(MONGODB_URI);
+
 
 const db = mongoose.connection;
 
