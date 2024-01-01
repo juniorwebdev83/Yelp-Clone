@@ -9,7 +9,7 @@ const RouterAuth = express.Router();
 
 // Registration endpoint
 RouterAuth.post('/register', async (req, res) => {
-  try {
+  try {yarn 
     // ... (unchanged)
   } catch (error) {
     console.error(error);
